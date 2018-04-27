@@ -17,10 +17,9 @@
 <!--TODO (1) Change the ConstraintLayout to a FrameLayout. - Done
     Note that you don't need to use the fully qualified name for FrameLayout. Replace
     "android.support.constraint.ConstraintLayout" with "FrameLayout"-->
-<!--TODO (6) Remove the line that declares the id, we don't need it-->
+<!--TODO (6) Remove the line that declares the id, we don't need it - Done-->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
