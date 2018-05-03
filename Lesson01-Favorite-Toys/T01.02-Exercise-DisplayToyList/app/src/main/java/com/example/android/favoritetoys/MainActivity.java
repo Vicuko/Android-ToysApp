@@ -17,10 +17,14 @@ package com.example.android.favoritetoys;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
-    // TODO (1) Declare a TextView variable called mToysListTextView
+    TextView mToysListTextView;
+    // TODO (1) Declare a TextView variable called mToysListTextView - Done
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
