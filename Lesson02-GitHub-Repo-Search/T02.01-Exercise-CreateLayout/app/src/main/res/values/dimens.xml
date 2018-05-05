@@ -5,7 +5,10 @@
 
     <!-- Main layout dimensions -->
     <dimen name="standard_padding">16dp</dimen>
+
     <dimen name="standard_text_size">22sp</dimen>
+    <dimen name="scroll_text_size">18sp</dimen>
+
     <dimen name="text_view_margin_top">8dp</dimen>
     <dimen name="scrollview_margin">16dp</dimen>
 </resources>
