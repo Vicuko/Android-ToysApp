@@ -16,6 +16,6 @@
 <resources>
     <string name="app_name">Github Query</string>
     <string name="query_hint">Introduce a query and then click search</string>
-    <string name="query_result_location">their search URL will show up here when they click search</string>
+    <string name="query_result_location">The search URL will show up here when they click search</string>
     <string name="make_search">Please, proceed to make a search in order to view the results of your query</string>
 </resources>
