@@ -45,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
 
     // TODO (2) Create a method called makeGithubSearchQuery
     // TODO (3) Within this method, build the URL with the text from the EditText and set the built URL to the TextView
+    void makeGithubSearchQuery() {
+        
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
