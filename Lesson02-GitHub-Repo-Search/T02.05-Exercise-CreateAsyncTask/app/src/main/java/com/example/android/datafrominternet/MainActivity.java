@@ -74,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
             String githubSearchResults = null;
             try {
                 githubSearchResults = NetworkUtils.getResponseFromHttpUrl(searchUrl);
-                mSearchResultsTextView.setText(githubSearchResults);
             } catch (IOException e) {
                 e.printStackTrace();
             }
