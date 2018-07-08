@@ -17,21 +17,21 @@ package com.example.android.recyclerview;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * We couldn't come up with a good name for this class. Then, we realized
  * that this lesson is about RecyclerView.
- *
+ * <p>
  * RecyclerView... Recycling... Saving the planet? Being green? Anyone?
  * #crickets
- *
+ * <p>
  * Avoid unnecessary garbage collection by using RecyclerView and ViewHolders.
- *
+ * <p>
  * If you don't like our puns, we named this Adapter GreenAdapter because its
  * contents are green.
  */
@@ -67,7 +67,6 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
     }
 
     /**
-     *
      * This gets called when each new ViewHolder is created. This happens when the RecyclerView
      * is laid out. Enough ViewHolders will be created to fill the screen and allow for scrolling.
      *
@@ -118,16 +117,42 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
         return mNumberItems;
     }
 
-    // TODO (12) Create a class called NumberViewHolder that extends RecyclerView.ViewHolder
+    // TODO (12) Create a class called NumberViewHolder that extends RecyclerView.ViewHolder - Done
 
-    // TODO (13) Within NumberViewHolder, create a TextView variable called listItemNumberView
+    // TODO (13) Within NumberViewHolder, create a TextView variable called listItemNumberView - Done
 
-    // TODO (14) Create a constructor for NumberViewHolder that accepts a View called itemView as a parameter
-    // TODO (15) Within the constructor, call super(itemView) and then find listItemNumberView by ID
+    // TODO (14) Create a constructor for NumberViewHolder that accepts a View called itemView as a parameter - Done
+    // TODO (15) Within the constructor, call super(itemView) and then find listItemNumberView by ID - Done
 
-    // TODO (16) Within the NumberViewHolder class, create a void method called bind that accepts an int parameter called listIndex
-    // TODO (17) Within bind, set the text of listItemNumberView to the listIndex
-    // TODO (18) Be careful to get the String representation of listIndex, as using setText with an int does something different
+    // TODO (16) Within the NumberViewHolder class, create a void method called bind that accepts an int parameter called listIndex - Done
+    // TODO (17) Within bind, set the text of listItemNumberView to the listIndex - Done
+    // TODO (18) Be careful to get the String representation of listIndex, as using setText with an int does something different - Done
 
+    public class NumberViewHolder extends RecyclerView.ViewHolder {
+
+        TextView listItemNumberView;
+
+        /**
+         * Constructor for our ViewHolder. Within this constructor, we get a reference to our
+         * TextViews and set an onClickListener to listen for clicks. Those will be handled in the
+         * onClick method below.
+         *
+         * @param itemView The View inflated in
+         *                 {@link GreenAdapter#onCreateViewHolder(ViewGroup, int)}
+         */
+        public NumberViewHolder(View itemView) {
+            super(itemView);
+            listItemNumberView = (TextView) itemView.findViewById(R.id.rv_numbers);
+        }
+
+        /**
+         * This method will take an integer as input and
+         * use that integer to display the appropriate text within a list item.
+         *
+         * @param listIndex Position of the item in the list
+         */
+        private void bind(int listIndex) {
+            listItemNumberView.setText(String.valueOf(listIndex));
+        }
     }
 }
