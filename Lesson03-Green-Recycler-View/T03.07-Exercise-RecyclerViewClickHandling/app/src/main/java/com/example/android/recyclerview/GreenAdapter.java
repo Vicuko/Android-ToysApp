@@ -39,7 +39,8 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
 
     private static final String TAG = GreenAdapter.class.getSimpleName();
 
-    // TODO (3) Create a final private ListItemClickListener called mOnClickListener
+    // TODO (3) Create a final private ListItemClickListener called mOnClickListener - Done
+    final private ListItemClickListener mOnClickListener;
 
     /*
      * The number of ViewHolders that have been created. Typically, you can figure out how many
@@ -87,19 +88,22 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
 
     private int mNumberItems;
 
-    // TODO (1) Add an interface called ListItemClickListener
-    // TODO (2) Within that interface, define a void method called onListItemClick that takes an int as a parameter
-
-    // TODO (4) Add a ListItemClickListener as a parameter to the constructor and store it in mOnClickListener
+    // TODO (1) Add an interface called ListItemClickListener - Done
+    // TODO (2) Within that interface, define a void method called onListItemClick that takes an int as a parameter - Done
+    public interface ListItemClickListener{
+        void onListItemClick(int clickedItemIndex);
+    }
+    // TODO (4) Add a ListItemClickListener as a parameter to the constructor and store it in mOnClickListener - Done
     /**
      * Constructor for GreenAdapter that accepts a number of items to display and the specification
      * for the ListItemClickListener.
      *
      * @param numberOfItems Number of items to display in list
      */
-    public GreenAdapter(int numberOfItems) {
+    public GreenAdapter(int numberOfItems, ListItemClickListener listener) {
         mNumberItems = numberOfItems;
         viewHolderCount = 0;
+        mOnClickListener = listener;
     }
 
     /**
