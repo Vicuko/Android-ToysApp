@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements GreenAdapter.List
     private RecyclerView mNumbersList;
 
     // TODO (9) Create a Toast variable called mToast to store the current Toast - Done
-    Toast mToast;
+    private Toast mToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements GreenAdapter.List
             mToast.cancel();
         }
         String toastMessage = getResources().getString(R.string.toast_beginning) + clickedItemIndex + getResources().getString(R.string.toast_ending);
-        mToast.makeText(this, toastMessage, Toast.LENGTH_LONG);
+        mToast = Toast.makeText(this, toastMessage, Toast.LENGTH_LONG);
         mToast.show();
     }
 }
