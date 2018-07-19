@@ -15,6 +15,8 @@
  */
 package com.example.android.implicitintents;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -35,10 +37,10 @@ public class MainActivity extends AppCompatActivity {
      * @param v Button that was clicked.
      */
     public void onClickOpenWebpageButton(View v) {
-        // TODO (5) Create a String that contains a URL ( make sure it starts with http:// or https:// )
-
-        // TODO (6) Replace the Toast with a call to openWebPage, passing in the URL String from the previous step
-        Toast.makeText(this, "TODO: Open a web page when this button is clicked", Toast.LENGTH_SHORT).show();
+        // TODO (5) Create a String that contains a URL ( make sure it starts with http:// or https:// ) - Done
+        String urlAsString = "http://www.vicuko.com";
+        // TODO (6) Replace the Toast with a call to openWebPage, passing in the URL String from the previous step - Done
+        openWebPage(urlAsString);
     }
 
     /**
@@ -66,9 +68,8 @@ public class MainActivity extends AppCompatActivity {
      * similar to what I've done above. You can view a list of implicit Intents on the Common
      * Intents page from the developer documentation.
      *
-     * @see <http://developer.android.com/guide/components/intents-common.html/>
-     *
      * @param v Button that was clicked.
+     * @see <http://developer.android.com/guide/components/intents-common.html/>
      */
     public void createYourOwn(View v) {
         Toast.makeText(this,
@@ -77,12 +78,17 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
-    // TODO (1) Create a method called openWebPage that accepts a String as a parameter
+    // TODO (1) Create a method called openWebPage that accepts a String as a parameter - Done
     // Do steps 2 - 4 within openWebPage
+    void openWebPage(String webString) {
 
-        // TODO (2) Use Uri.parse to parse the String into a Uri
-
-        // TODO (3) Create an Intent with Intent.ACTION_VIEW and the webpage Uri as parameters
-
-        // TODO (4) Verify that this Intent can be launched and then call startActivity
+        // TODO (2) Use Uri.parse to parse the String into a Uri - Done
+        Uri webpage = Uri.parse(webString);
+        // TODO (3) Create an Intent with Intent.ACTION_VIEW and the webpage Uri as parameters - Done
+        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+        // TODO (4) Verify that this Intent can be launched and then call startActivity - Done
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
 }
