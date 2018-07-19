@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".ChildActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_display"
+        android:textSize="@dimen/text_size"
+        android:text="@string/default_text"/>
+
 </android.support.constraint.ConstraintLayout>
