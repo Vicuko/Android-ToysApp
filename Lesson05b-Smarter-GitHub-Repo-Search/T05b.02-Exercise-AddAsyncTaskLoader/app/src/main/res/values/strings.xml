@@ -19,4 +19,7 @@
     <string name="error_message">
         Failed to get results. Please try again.
     </string>
+
+    <!--Error messages shown via Toast-->
+    <string name="no_query">Sorry, it seems no query was introduced. Please, type something in and try again.</string>
 </resources>
