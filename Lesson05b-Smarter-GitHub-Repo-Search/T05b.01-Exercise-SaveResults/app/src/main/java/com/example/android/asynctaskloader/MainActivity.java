@@ -63,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
 
         // TODO (9) If the savedInstanceState bundle is not null, set the text of the URL and search results TextView respectively - Done
         if (savedInstanceState != null){
-            String savedUrl = savedInstanceState.getString("query_url");
-            String savedJson = savedInstanceState.getString("raw_json");
+            String savedUrl = savedInstanceState.getString(URL_QUERY_KEY);
+            String savedJson = savedInstanceState.getString(RAW_JSON_KEY);
             mUrlDisplayTextView.setText(savedUrl);
             mSearchResultsTextView.setText(savedJson);
         }
