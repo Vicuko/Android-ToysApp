@@ -23,6 +23,7 @@ public class SettingsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
+//                This retrieves the parent activity as indicated in the manifest
                 NavUtils.navigateUpFromSameTask(this);
         }
         return super.onOptionsItemSelected(item);
