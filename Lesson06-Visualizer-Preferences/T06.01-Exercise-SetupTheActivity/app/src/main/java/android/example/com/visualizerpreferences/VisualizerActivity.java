@@ -115,11 +115,11 @@ public class VisualizerActivity extends AppCompatActivity {
         }
     }
 
-    // TODO (1) Create a new Empty Activity named SettingsActivity; make sure to generate the
+    // TODO (1) Create a new Empty Activity named SettingsActivity; make sure to generate the - Done
     // activity_settings.xml layout file as well and add the activity to the manifest
 
-    // TODO (2) Add a new resource folder called menu and create visualizer_menu.xml
-    // TODO (3) In visualizer_menu.xml create a menu item with a single item. The id should be
+    // TODO (2) Add a new resource folder called menu and create visualizer_menu.xml - Done
+    // TODO (3) In visualizer_menu.xml create a menu item with a single item. The id should be - Done
     // "action_settings", title should be saved in strings.xml, the item should never
     // be shown as an action, and orderInCategory should be 100
 

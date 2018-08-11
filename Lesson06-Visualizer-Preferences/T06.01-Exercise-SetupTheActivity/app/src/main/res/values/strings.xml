@@ -15,4 +15,11 @@
 
     <!-- Value in SharedPreferences for green color option -->
     <string name="pref_color_green_value" translatable="false">green</string>
+
+
+    <!--Strings for menu options-->
+    <string name="preference_menu_option">Settings</string>
+
+    <!--Strings for Shared Preferences-->
+
 </resources>
