@@ -7,16 +7,21 @@
           - Used by Preferences  -
           - - - - - - - - - - - - - - - -->
 
-    <!-- Label for the show bass checkbox preference -->
+    <!-- Labels for the checkbox preferences -->
     <string name="pref_show_bass_label">Show Bass</string>
-    <!-- Key name for storing bass in SharedPreferences -->
+    <string name="pref_treble_label">Treble</string>
+    <string name="pref_mid_range_label">Mid-Range</string>
+
+    <!-- Key names for storing SharedPreferences -->
     <string name="pref_show_bass_key" translatable="false">show_bass</string>
+    <string name="pref_treble_key" translatable="false">treble</string>
+    <string name="pref_mid_range_key" translatable="false">mid_range</string>
 
     <!-- Summary for Checkboxes -->
     <string name="pref_show_true">Shown</string>
     <string name="pref_show_false">Hidden</string>
 
-    <!-- TODO (2) Add all of the strings for the new checkboxes -->
+    <!-- TODO (2) Add all of the strings for the new checkboxes - Done -->
 
     <!-- Value in SharedPreferences for red color option -->
     <string name="pref_color_red_value" translatable="false">red</string>
