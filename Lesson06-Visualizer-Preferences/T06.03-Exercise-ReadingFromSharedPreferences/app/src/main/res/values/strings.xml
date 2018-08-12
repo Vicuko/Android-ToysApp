@@ -2,6 +2,7 @@
     <string name="app_name">Visualize</string>
 
     <string name="action_settings">Settings</string>
+    <string name="show_bass_key">show_bass</string>
 
     <!-- - - - - - - - - - - - - - - -
           - Used by Preferences  -
