@@ -19,9 +19,10 @@ package android.example.com.visualizerpreferences;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
+import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceFragmentCompat;
 
-// TODO (1) Implement OnSharedPreferenceChangeListener
+// TODO (1) Implement OnSharedPreferenceChangeListener - Done
 public class SettingsFragment extends PreferenceFragmentCompat implements OnSharedPreferenceChangeListener {
 
     @Override
@@ -47,6 +48,9 @@ public class SettingsFragment extends PreferenceFragmentCompat implements OnShar
     // This method should check if the preference is a ListPreference and, if so, find the label
     // associated with the value. You can do this by using the findIndexOfValue and getEntries methods
     // of Preference.
+    public void setPreferenceSummary(Preference preference, String text){
+
+    }
 
     // TODO (5) Register and unregister the OnSharedPreferenceChange listener (this class) in
     // onCreate and onDestroy respectively.
