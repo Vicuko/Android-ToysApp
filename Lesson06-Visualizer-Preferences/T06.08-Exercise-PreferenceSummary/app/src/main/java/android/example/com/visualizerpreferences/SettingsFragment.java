@@ -22,7 +22,7 @@ import android.os.Bundle;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceFragmentCompat;
 
-// TODO (1) Implement OnSharedPreferenceChangeListener - Done
+// TODO (1) Implement OnSharedPreferenceChangeListener -  Done
 public class SettingsFragment extends PreferenceFragmentCompat implements OnSharedPreferenceChangeListener {
 
     @Override
