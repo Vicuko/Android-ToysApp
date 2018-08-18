@@ -31,7 +31,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements OnShar
         // Add visualizer preferences, defined in the XML file in res->xml->pref_visualizer
         addPreferencesFromResource(R.xml.pref_visualizer);
 
-        // TODO (3) Get the preference screen, get the number of preferences and iterate through
+        // TODO (3) Get the preference screen, get the number of preferences and iterate through -
         // all of the preferences if it is not a checkbox preference, call the setSummary method
         // passing in a preference and the value of the preference
     }
