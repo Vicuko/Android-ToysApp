@@ -52,7 +52,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements OnShar
 
     }
 
-    // TODO (5) Register and unregister the OnSharedPreferenceChange listener (this class) in
+    // TODO (5) Register and unregister the OnSharedPreferenceChange listener (this class) in -
     // onCreate and onDestroy respectively.
 
 
