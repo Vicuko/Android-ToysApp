@@ -44,7 +44,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements OnShar
     // TODO (4) Override onSharedPreferenceChanged and, if it is not a checkbox preference, - D
     // call setPreferenceSummary on the changed preference
 
-    // TODO (2) Create a setPreferenceSummary which takes a Preference and String value as parameters.
+    // TODO (2) Create a setPreferenceSummary which takes a Preference and String value as parameters. -
     // This method should check if the preference is a ListPreference and, if so, find the label
     // associated with the value. You can do this by using the findIndexOfValue and getEntries methods
     // of Preference.
