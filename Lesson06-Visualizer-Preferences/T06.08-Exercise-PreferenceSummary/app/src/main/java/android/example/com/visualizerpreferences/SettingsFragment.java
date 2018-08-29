@@ -21,6 +21,7 @@ import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceFragmentCompat;
+import android.support.v7.preference.PreferenceScreen;
 
 // TODO (1) Implement OnSharedPreferenceChangeListener -  Done
 public class SettingsFragment extends PreferenceFragmentCompat implements OnSharedPreferenceChangeListener {
@@ -34,6 +35,8 @@ public class SettingsFragment extends PreferenceFragmentCompat implements OnShar
         // TODO (3) Get the preference screen, get the number of preferences and iterate through - Do
         // all of the preferences if it is not a checkbox preference, call the setSummary method
         // passing in a preference and the value of the preference
+        SharedPreferences sharedPreferences = getPreferenceScreen().getSharedPreferences();
+        PreferenceScreen preferenceScreen = getPreferenceScreen();
     }
 
     @Override
@@ -49,6 +52,9 @@ public class SettingsFragment extends PreferenceFragmentCompat implements OnShar
     // associated with the value. You can do this by using the findIndexOfValue and getEntries methods
     // of Preference.
     public void setPreferenceSummary(Preference preference, String text){
+        if (preference.isPersistent()){
+
+        }
 
     }
 
