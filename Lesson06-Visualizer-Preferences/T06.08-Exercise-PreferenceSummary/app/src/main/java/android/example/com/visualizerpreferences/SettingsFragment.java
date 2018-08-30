@@ -44,7 +44,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements OnShar
 
     }
 
-    // TODO (4) Override onSharedPreferenceChanged and, if it is not a checkbox preference, - Do
+    // TODO (4) Override onSharedPreferenceChanged and, if it is not a checkbox preference, - Don
     // call setPreferenceSummary on the changed preference
 
     // TODO (2) Create a setPreferenceSummary which takes a Preference and String value as parameters. - D
