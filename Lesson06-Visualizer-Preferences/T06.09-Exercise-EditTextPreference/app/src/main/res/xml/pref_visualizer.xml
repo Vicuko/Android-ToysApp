@@ -29,8 +29,8 @@
     <EditTextPreference
         android:defaultValue="@string/pref_size_def"
         android:key="@string/pref_size_key"
-        android:title="@string/pref_size_lbl"
-        />
+        android:title="@string/pref_size_lbl" />
+
     <ListPreference
         android:defaultValue="@string/pref_color_red_value"
         android:entries="@array/pref_color_option_labels"
