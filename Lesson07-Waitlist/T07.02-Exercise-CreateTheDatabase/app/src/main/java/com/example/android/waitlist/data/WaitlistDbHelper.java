@@ -24,12 +24,12 @@ public class WaitlistDbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         // TODO (6) Inside, create an String query called SQL_CREATE_WAITLIST_TABLE that will create the table - Done
-        final String SQL_CREATE_WAITLIST_TABLE = "CREATE TABLE" +
-                WaitlistEntry.TABLE_NAME + "(" +
-                WaitlistEntry._ID + "INTEGER PRIMARY KEY AUTOINCREMENT," +
-                WaitlistEntry.COLUMN_GUEST_NAME + "TEXT NOT NULL," +
-                WaitlistEntry.COLUMN_PARTY_SIZE + "INTEGER NOT NULL," +
-                WaitlistEntry.COLUMN_TIMESTAMP + "TIMESTAMP DEFAULT CURRENT_TIMESTAMP)";
+        final String SQL_CREATE_WAITLIST_TABLE =
+                "CREATE TABLE " + WaitlistEntry.TABLE_NAME + " (" +
+                WaitlistEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                WaitlistEntry.COLUMN_GUEST_NAME + " TEXT NOT NULL," +
+                WaitlistEntry.COLUMN_PARTY_SIZE + " INTEGER NOT NULL," +
+                WaitlistEntry.COLUMN_TIMESTAMP + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP)";
 
 
         // TODO (7) Execute the query by calling execSQL on sqLiteDatabase and pass the string query SQL_CREATE_WAITLIST_TABLE - Done
