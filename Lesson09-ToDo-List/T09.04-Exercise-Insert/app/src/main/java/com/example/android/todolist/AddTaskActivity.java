@@ -49,7 +49,7 @@ public class AddTaskActivity extends AppCompatActivity {
     public void onClickAddTask(View view) {
         // Not yet implemented
         // TODO (6) Check if EditText is empty, if not retrieve input and store it in a ContentValues object - Done
-        String task = ((EditText) view.findViewById(R.id.editTextTaskDescription)).getText().toString();
+        String task = ((EditText) findViewById(R.id.editTextTaskDescription)).getText().toString();
 
         if (task.isEmpty()) {
             return;
@@ -64,7 +64,7 @@ public class AddTaskActivity extends AppCompatActivity {
         // TODO (8) Display the URI that's returned with a Toast - Done
         // [Hint] Don't forget to call finish() to return to MainActivity after this insert is complete
         if (uri!=null){
-            Toast.makeText(this,"Yey! The task was created correctly.\nHere is the URI:\n" + uri,Toast.LENGTH_SHORT);
+            Toast.makeText(this,"Yey! The task was created correctly.\nHere is the URI:\n" + uri.toString(),Toast.LENGTH_LONG).show();
         }
         finish();
     }
