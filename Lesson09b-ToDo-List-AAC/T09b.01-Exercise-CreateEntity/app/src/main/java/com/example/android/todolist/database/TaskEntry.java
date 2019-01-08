@@ -1,8 +1,11 @@
 package com.example.android.todolist.database;
 
+import android.arch.persistence.room.Entity;
+
 import java.util.Date;
 
-// TODO (2) Annotate the class with Entity. Use "task" for the table name
+// TODO (2) Annotate the class with Entity. Use "task" for the table name - Done
+@Entity(tableName = "task")
 public class TaskEntry {
 
     // TODO (3) Annotate the id as PrimaryKey. Set autoGenerate to true.
