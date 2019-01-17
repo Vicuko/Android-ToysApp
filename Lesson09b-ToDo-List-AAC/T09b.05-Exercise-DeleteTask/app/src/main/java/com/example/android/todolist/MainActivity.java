@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
                 // Here is where you'll implement swipe to delete
-                // TODO (1) Get the diskIO Executor from the instance of AppExecutors and
+                // TODO (1) Get the diskIO Executor from the instance of AppExecutors and - Done
                 // call the diskIO execute method with a new Runnable and implement its run method
                 AppExecutors.getInstance().diskIO().execute(new Runnable() {
                     @Override
