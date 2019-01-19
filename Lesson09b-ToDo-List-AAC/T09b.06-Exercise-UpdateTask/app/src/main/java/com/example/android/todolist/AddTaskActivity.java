@@ -151,8 +151,13 @@ public class AddTaskActivity extends AppCompatActivity {
                 // TODO (9) insert the task only if mTaskId matches DEFAULT_TASK_ID
                 // Otherwise update it
                 // call finish in any case
-                mDb.taskDao().insertTask(taskEntry);
-                finish();
+                if (mTaskId == DEFAULT_TASK_ID) {
+                    mDb.taskDao().insertTask(taskEntry);
+                    finish();
+                }else{
+                    taskEntry.setId(mTaskId);
+                    mDb.taskDao().updateTask(taskEntry);
+                }
             }
         });
     }
