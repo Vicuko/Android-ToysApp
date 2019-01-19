@@ -71,8 +71,9 @@ public class AddTaskActivity extends AppCompatActivity {
             mButton.setText(R.string.update_button);
             if (mTaskId == DEFAULT_TASK_ID) {
                 // populate the UI
-                // TODO (3) Assign the value of EXTRA_TASK_ID in the intent to mTaskId
+                // TODO (3) Assign the value of EXTRA_TASK_ID in the intent to mTaskId - Done
                 // Use DEFAULT_TASK_ID as the default
+                mTaskId = intent.getIntExtra(EXTRA_TASK_ID, DEFAULT_TASK_ID);
 
                 // TODO (4) Get the diskIO Executor from the instance of AppExecutors and
                 // call the diskIO execute method with a new Runnable and implement its run method
