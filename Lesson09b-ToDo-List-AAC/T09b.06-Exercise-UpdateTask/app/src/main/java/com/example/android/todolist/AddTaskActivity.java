@@ -75,7 +75,7 @@ public class AddTaskActivity extends AppCompatActivity {
                 // Use DEFAULT_TASK_ID as the default
                 mTaskId = intent.getIntExtra(EXTRA_TASK_ID, DEFAULT_TASK_ID);
 
-                // TODO (4) Get the diskIO Executor from the instance of AppExecutors and
+                // TODO (4) Get the diskIO Executor from the instance of AppExecutors and - Done
                 // call the diskIO execute method with a new Runnable and implement its run method
                 AppExecutors.getInstance().diskIO().execute(new Runnable() {
                     @Override
@@ -148,7 +148,7 @@ public class AddTaskActivity extends AppCompatActivity {
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
-                // TODO (9) insert the task only if mTaskId matches DEFAULT_TASK_ID
+                // TODO (9) insert the task only if mTaskId matches DEFAULT_TASK_ID - Done
                 // Otherwise update it
                 // call finish in any case
                 if (mTaskId == DEFAULT_TASK_ID) {
