@@ -130,7 +130,9 @@ public class AddTaskActivity extends AppCompatActivity {
         if (task == null){
             return;
         }
-        // TODO (8) use the variable task to populate the UI
+        // TODO (8) use the variable task to populate the UI - Done
+        mEditText.setText(task.getDescription());
+        setPriorityInViews(task.getPriority());
     }
 
     /**
