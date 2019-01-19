@@ -77,12 +77,23 @@ public class AddTaskActivity extends AppCompatActivity {
 
                 // TODO (4) Get the diskIO Executor from the instance of AppExecutors and
                 // call the diskIO execute method with a new Runnable and implement its run method
-
-                // TODO (5) Use the loadTaskById method to retrieve the task with id mTaskId and
-                // assign its value to a final TaskEntry variable
-
-                // TODO (6) Call the populateUI method with the retrieve tasks
-                // Remember to wrap it in a call to runOnUiThread
+                AppExecutors.getInstance().diskIO().execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        // TODO (5) Use the loadTaskById method to retrieve the task with id mTaskId and - Done
+                        // assign its value to a final TaskEntry variable
+                        final TaskEntry task = mDb.taskDao().loadTaskById(mTaskId);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                // TODO (6) Call the populateUI method with the retrieve tasks - Done
+                                // Remember to wrap it in a call to runOnUiThread
+                                populateUI(task);
+                            }
+                        });
+                        populateUI(task);
+                    }
+                });
             }
         }
     }
