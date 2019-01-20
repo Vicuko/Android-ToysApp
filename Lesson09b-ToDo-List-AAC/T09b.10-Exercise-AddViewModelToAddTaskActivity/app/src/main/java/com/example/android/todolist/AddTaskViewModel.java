@@ -16,5 +16,8 @@ public class AddTaskViewModel extends ViewModel {
     // TODO (8) Create a constructor where you call loadTaskById of the taskDao to initialize the tasks variable
     // Note: The constructor should receive the database and the taskId
 
-    // TODO (7) Create a getter for the task variable
+    // TODO (7) Create a getter for the task variable - Done
+    public LiveData<List<TaskEntry>> getTask(){
+        return task;
+    }
 }
