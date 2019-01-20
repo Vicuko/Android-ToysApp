@@ -19,9 +19,14 @@ public class MainViewModel extends AndroidViewModel {
         super(application);
     }
 
+    // TODO (3) Create a getter for the tasks variable - Done
+    public LiveData<List<TaskEntry>> getTasks(){
+      return tasks;
+    };
+
 
 
     // TODO (4) In the constructor use the loadAllTasks of the taskDao to initialize the tasks variable
 
-    // TODO (3) Create a getter for the tasks variable
+
 }
