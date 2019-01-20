@@ -1,18 +1,18 @@
 /*
-* Copyright (C) 2016 The Android Open Source Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 package com.example.android.todolist;
 
@@ -74,22 +74,17 @@ public class AddTaskActivity extends AppCompatActivity {
                 // populate the UI
                 mTaskId = intent.getIntExtra(EXTRA_TASK_ID, DEFAULT_TASK_ID);
 
-                AppExecutors.getInstance().diskIO().execute(new Runnable() {
+                // TODO (3) Extract all this logic outside the Executor and remove the Executor - Done
+                // TODO (2) Fix compile issue by wrapping the return type with LiveData - Done
+                final LiveData<TaskEntry> task = mDb.taskDao().loadTaskById(mTaskId);
+                // TODO (4) Observe tasks and move the logic from runOnUiThread to onChanged
+                // We will be able to simplify this once we learn more
+                // about Android Architecture Components
+                runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        // TODO (3) Extract all this logic outside the Executor and remove the Executor
-                        // TODO (2) Fix compile issue by wrapping the return type with LiveData - Done
-                        final LiveData<TaskEntry> task = mDb.taskDao().loadTaskById(mTaskId);
-                        // TODO (4) Observe tasks and move the logic from runOnUiThread to onChanged
-                        // We will be able to simplify this once we learn more
-                        // about Android Architecture Components
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                // TODO (5) Remove the observer as we do not need it any more
-                                populateUI(task);
-                            }
-                        });
+                        // TODO (5) Remove the observer as we do not need it any more
+                        populateUI(task);
                     }
                 });
             }
