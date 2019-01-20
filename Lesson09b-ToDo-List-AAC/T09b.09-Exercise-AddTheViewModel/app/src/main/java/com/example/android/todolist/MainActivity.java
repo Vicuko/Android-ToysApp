@@ -115,9 +115,7 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
 
     // TODO (8) This method is not retrieving the tasks any more. Refactor to a more suitable name such as setupViewModel
     private void retrieveTasks() {
-        // TODO (5) Remove the logging and the call to loadAllTasks, this is done in the ViewModel now
-        Log.d(TAG, "Actively retrieving the tasks from the DataBase");
-        LiveData<List<TaskEntry>> tasks = mDb.taskDao().loadAllTasks();
+        // TODO (5) Remove the logging and the call to loadAllTasks, this is done in the ViewModel now - Done
         // TODO (6) Declare a ViewModel variable and initialize it by calling ViewModelProviders.of
         // TODO (7) Observe the LiveData object in the ViewModel
         tasks.observe(this, new Observer<List<TaskEntry>>() {
