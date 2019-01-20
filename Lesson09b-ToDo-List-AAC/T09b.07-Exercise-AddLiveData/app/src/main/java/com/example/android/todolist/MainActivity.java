@@ -112,17 +112,7 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
         });
 
         mDb = AppDatabase.getInstance(getApplicationContext());
-        // TODO (7) Call retrieveTasks from here and remove the onResume method
-    }
-
-    /**
-     * This method is called after this activity has been paused or restarted.
-     * Often, this is after new data has been inserted through an AddTaskActivity,
-     * so this re-queries the database data for any changes.
-     */
-    @Override
-    protected void onResume() {
-        super.onResume();
+        // TODO (7) Call retrieveTasks from here and remove the onResume method - Done
         retrieveTasks();
     }
 
