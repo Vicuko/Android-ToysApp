@@ -10,6 +10,11 @@ public class AddTaskViewModelFactory extends ViewModelProvider.NewInstanceFactor
     private final AppDatabase mDb;
     private final int mTaskId;
 
+    public AddTaskViewModelFactory(AppDatabase mDb, int mTaskId) {
+        this.mDb = mDb;
+        this.mTaskId = mTaskId;
+    }
+
     // TODO (3) Initialize the member variables in the constructor with the parameters received
 
     // TODO (4) Uncomment the following method
