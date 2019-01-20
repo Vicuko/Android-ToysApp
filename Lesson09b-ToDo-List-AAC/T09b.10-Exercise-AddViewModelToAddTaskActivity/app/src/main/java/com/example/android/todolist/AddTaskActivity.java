@@ -18,6 +18,7 @@ package com.example.android.todolist;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -80,8 +81,10 @@ public class AddTaskActivity extends AppCompatActivity {
                 // TODO (9) Remove the logging and the call to loadTaskById, this is done in the ViewModel now - Done
                 // TODO (10) Declare a AddTaskViewModelFactory using mDb and mTaskId - Done
                 AddTaskViewModelFactory factory = new AddTaskViewModelFactory(mDb,mTaskId);
-                // TODO (11) Declare a AddTaskViewModel variable and initialize it by calling ViewModelProviders.of
+                // TODO (11) Declare a AddTaskViewModel variable and initialize it by calling ViewModelProviders.of - Done
                 // for that use the factory created above AddTaskViewModel
+                final AddTaskViewModel viewModel
+                        = ViewModelProviders.of(this, factory).get(AddTaskViewModel.class);
                 // TODO (12) Observe the LiveData object in the ViewModel. Use it also when removing the observer
                 task.observe(this, new Observer<TaskEntry>() {
                     @Override
