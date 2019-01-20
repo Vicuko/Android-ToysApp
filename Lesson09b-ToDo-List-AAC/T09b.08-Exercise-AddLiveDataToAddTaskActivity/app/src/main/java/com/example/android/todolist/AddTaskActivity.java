@@ -22,6 +22,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -80,10 +81,12 @@ public class AddTaskActivity extends AppCompatActivity {
                 // TODO (2) Fix compile issue by wrapping the return type with LiveData - Done
                 final LiveData<TaskEntry> task = mDb.taskDao().loadTaskById(mTaskId);
                 // TODO (4) Observe tasks and move the logic from runOnUiThread to onChanged - Done
-                // TODO (5) Remove the observer as we do not need it any more
+                // TODO (5) Remove the observer as we do not need it any more - Done
                 task.observe(this, new Observer<TaskEntry>() {
                     @Override
                     public void onChanged(@Nullable TaskEntry taskEntry) {
+                        task.removeObserver(this);
+                        Log.d(TAG, "Receiving database update from LiveData");
                         populateUI(taskEntry);
                     }
                 });
