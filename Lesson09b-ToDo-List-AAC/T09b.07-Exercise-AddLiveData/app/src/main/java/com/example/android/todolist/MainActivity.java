@@ -16,8 +16,12 @@
 
 package com.example.android.todolist;
 
+import android.arch.lifecycle.LifecycleOwner;
+import android.arch.lifecycle.LiveData;
+import android.arch.lifecycle.Observer;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
@@ -31,10 +35,6 @@ import com.example.android.todolist.database.AppDatabase;
 import com.example.android.todolist.database.TaskEntry;
 
 import java.util.List;
-
-import androidx.lifecycle.LifecycleOwner;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.Observer;
 
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
 
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
         // TODO (5) Observe tasks and move the logic from runOnUiThread to onChanged - Done
         tasks.observe((LifecycleOwner) this, new Observer<List<TaskEntry>>() {
             @Override
-            public void onChanged(List<TaskEntry> taskEntries) {
+            public void onChanged(@Nullable List<TaskEntry> taskEntries) {
                 Log.d(TAG,"Receiving database update from LiveData");
                 mAdapter.setTasks(taskEntries);
             }
