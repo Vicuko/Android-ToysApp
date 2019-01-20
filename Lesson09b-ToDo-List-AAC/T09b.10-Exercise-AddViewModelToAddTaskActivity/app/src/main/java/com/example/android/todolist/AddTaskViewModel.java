@@ -1,7 +1,9 @@
 package com.example.android.todolist;
 
-// TODO (5) Make this class extend ViewModel
-public class AddTaskViewModel {
+import android.arch.lifecycle.ViewModel;
+
+// TODO (5) Make this class extend ViewModel - Done
+public class AddTaskViewModel extends ViewModel {
 
     // TODO (6) Add a task member variable for the TaskEntry object wrapped in a LiveData
 

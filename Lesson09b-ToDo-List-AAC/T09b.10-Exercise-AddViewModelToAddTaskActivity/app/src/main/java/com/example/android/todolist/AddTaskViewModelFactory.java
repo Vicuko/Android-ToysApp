@@ -1,5 +1,6 @@
 package com.example.android.todolist;
 
+import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 
 import com.example.android.todolist.database.AppDatabase;
@@ -10,18 +11,17 @@ public class AddTaskViewModelFactory extends ViewModelProvider.NewInstanceFactor
     private final AppDatabase mDb;
     private final int mTaskId;
 
-    public AddTaskViewModelFactory(AppDatabase mDb, int mTaskId) {
-        this.mDb = mDb;
-        this.mTaskId = mTaskId;
+    // TODO (3) Initialize the member variables in the constructor with the parameters received - Done
+    public AddTaskViewModelFactory(AppDatabase database, int taskId) {
+        this.mDb = database;
+        this.mTaskId = taskId;
     }
 
-    // TODO (3) Initialize the member variables in the constructor with the parameters received
-
-    // TODO (4) Uncomment the following method
+    // TODO (4) Uncomment the following method - Done
     // Note: This can be reused with minor modifications
-    /*@Override
+    @Override
     public <T extends ViewModel> T create(Class<T> modelClass) {
         //noinspection unchecked
         return (T) new AddTaskViewModel(mDb, mTaskId);
-    }*/
+    }
 }
