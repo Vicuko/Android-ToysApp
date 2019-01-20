@@ -16,6 +16,7 @@
 
 package com.example.android.todolist;
 
+import android.arch.lifecycle.LiveData;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -77,8 +78,8 @@ public class AddTaskActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         // TODO (3) Extract all this logic outside the Executor and remove the Executor
-                        // TODO (2) Fix compile issue by wrapping the return type with LiveData
-                        final TaskEntry task = mDb.taskDao().loadTaskById(mTaskId);
+                        // TODO (2) Fix compile issue by wrapping the return type with LiveData - Done
+                        final LiveData<TaskEntry> task = mDb.taskDao().loadTaskById(mTaskId);
                         // TODO (4) Observe tasks and move the logic from runOnUiThread to onChanged
                         // We will be able to simplify this once we learn more
                         // about Android Architecture Components
