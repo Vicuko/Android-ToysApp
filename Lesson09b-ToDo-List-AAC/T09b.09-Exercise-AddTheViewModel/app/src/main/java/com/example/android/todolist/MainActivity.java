@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
         viewModel.getTasks().observe(this, new Observer<List<TaskEntry>>() {
             @Override
             public void onChanged(@Nullable List<TaskEntry> taskEntries) {
-                Log.d(TAG, "Receiving database update from LiveData");
+                Log.d(TAG, "Receiving database update from LiveData in ViewModel");
                 mAdapter.setTasks(taskEntries);
             }
         });
