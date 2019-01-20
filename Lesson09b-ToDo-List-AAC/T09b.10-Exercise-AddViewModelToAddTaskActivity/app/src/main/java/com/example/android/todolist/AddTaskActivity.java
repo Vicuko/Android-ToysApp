@@ -16,7 +16,6 @@
 
 package com.example.android.todolist;
 
-import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
@@ -85,11 +84,11 @@ public class AddTaskActivity extends AppCompatActivity {
                 // for that use the factory created above AddTaskViewModel
                 final AddTaskViewModel viewModel
                         = ViewModelProviders.of(this, factory).get(AddTaskViewModel.class);
-                // TODO (12) Observe the LiveData object in the ViewModel. Use it also when removing the observer
-                task.observe(this, new Observer<TaskEntry>() {
+                // TODO (12) Observe the LiveData object in the ViewModel. Use it also when removing the observer - Done
+                viewModel.getTask().observe(this, new Observer<TaskEntry>() {
                     @Override
                     public void onChanged(@Nullable TaskEntry taskEntry) {
-                        task.removeObserver(this);
+                        viewModel.getTask().removeObserver(this);
                         Log.d(TAG, "Receiving database update from LiveData");
                         populateUI(taskEntry);
                     }
