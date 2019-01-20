@@ -89,8 +89,7 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
                         int position = viewHolder.getAdapterPosition();
                         List<TaskEntry> tasks = mAdapter.getTasks();
                         mDb.taskDao().deleteTask(tasks.get(position));
-                        // TODO (6) Remove the call to retrieveTasks
-                        retrieveTasks();
+                        // TODO (6) Remove the call to retrieveTasks - Done
                     }
                 });
             }
