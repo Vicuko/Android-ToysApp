@@ -31,7 +31,10 @@ dependencies {
     implementation "android.arch.persistence.room:runtime:1.0.0"
     annotationProcessor "android.arch.persistence.room:compiler:1.0.0"
 
-    // TODO (1) Add LiveData dependencies
+    // TODO (1) Add LiveData dependencies - Done
+    def lifecycle_version = "2.0.0"
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
 
     //Testing
     // Instrumentation dependencies use androidTestCompile
