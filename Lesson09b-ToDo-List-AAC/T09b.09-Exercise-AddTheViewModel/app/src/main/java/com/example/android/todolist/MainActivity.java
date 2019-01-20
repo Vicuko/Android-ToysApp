@@ -110,11 +110,11 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
         });
 
         mDb = AppDatabase.getInstance(getApplicationContext());
-        retrieveTasks();
+        setupViewModel();
     }
 
-    // TODO (8) This method is not retrieving the tasks any more. Refactor to a more suitable name such as setupViewModel
-    private void retrieveTasks() {
+    // TODO (8) This method is not retrieving the tasks any more. Refactor to a more suitable name such as setupViewModel - Done
+    private void setupViewModel() {
         // TODO (5) Remove the logging and the call to loadAllTasks, this is done in the ViewModel now - Done
         // TODO (6) Declare a ViewModel variable and initialize it by calling ViewModelProviders.of - Done
         MainViewModel viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
