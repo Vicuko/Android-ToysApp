@@ -9,12 +9,14 @@ import android.arch.persistence.room.Update;
 
 import java.util.List;
 
+import androidx.lifecycle.LiveData;
+
 @Dao
 public interface TaskDao {
 
-    // TODO (2) Wrap the return type with LiveData
+    // TODO (2) Wrap the return type with LiveData - Done
     @Query("SELECT * FROM task ORDER BY priority")
-    List<TaskEntry> loadAllTasks();
+    LiveData<List<TaskEntry>> loadAllTasks();
 
     @Insert
     void insertTask(TaskEntry taskEntry);
