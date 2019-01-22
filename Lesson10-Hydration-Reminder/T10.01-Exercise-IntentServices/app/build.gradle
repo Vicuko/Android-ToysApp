@@ -4,6 +4,7 @@ android {
     compileSdkVersion 26
     buildToolsVersion '28.0.3'
     defaultConfig {
+        vectorDrawables.useSupportLibrary = true
         applicationId "com.example.android.background"
         minSdkVersion 14
         targetSdkVersion 26
