@@ -39,8 +39,8 @@ public class NotificationUtils {
     // the notification is pressed. This pending intent should open up the MainActivity.
     private static PendingIntent contentIntent(Context context) {
 
-        // TODO (2) Create an intent that opens up the MainActivity
-        Intent intent = new Intent(,MainActivity.class);
+        // TODO (2) Create an intent that opens up the MainActivity - Done
+        Intent intent = new Intent(context ,MainActivity.class);
         // TODO (3) Create a PendingIntent using getActivity that:
         // - Take the context passed in as a parameter
         // - Takes an unique integer ID for the pending intent (you can create a constant for
