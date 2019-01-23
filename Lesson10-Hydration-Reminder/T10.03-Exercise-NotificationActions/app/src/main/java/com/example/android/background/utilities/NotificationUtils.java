@@ -48,6 +48,7 @@ public class NotificationUtils {
      * This pending intent id is used to uniquely reference the pending intent
      */
     private static final int WATER_REMINDER_PENDING_INTENT_ID = 3417;
+    private static final int ACTION_IGNORE_PENDING_INTENT_ID = 4371;
     /**
      * This notification channel id is used to link notifications to this channel
      */
@@ -97,7 +98,13 @@ public class NotificationUtils {
         //      TODO (7) Set the action of the intent to designate you want to dismiss the notification - Done
         ignoreReminderIntent.setAction(ReminderTasks.ACTION_DISMISS_NOTIFICATION);
         //      TODO (8) Create a PendingIntent from the intent to launch WaterReminderIntentService
+        PendingIntent ignoreReminderPendingIntent = PendingIntent.getService(
+                context,
+                ACTION_IGNORE_PENDING_INTENT_ID,
+                ignoreReminderIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
         //      TODO (9) Create an Action for the user to ignore the notification (and dismiss it)
+
         //      TODO (10) Return the action
     }
 
