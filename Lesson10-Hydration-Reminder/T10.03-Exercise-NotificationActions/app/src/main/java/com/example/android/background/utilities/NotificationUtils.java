@@ -30,6 +30,7 @@ import android.support.v4.content.ContextCompat;
 
 import com.example.android.background.MainActivity;
 import com.example.android.background.R;
+import com.example.android.background.sync.ReminderTasks;
 import com.example.android.background.sync.WaterReminderIntentService;
 
 /**
@@ -92,8 +93,9 @@ public class NotificationUtils {
     //  TODO (5) Add a static method called ignoreReminderAction - Done
     public static NotificationCompat.Action ignoreReminderAction(Context context) {
         //      TODO (6) Create an Intent to launch WaterReminderIntentService - Done
-        Intent intent = new Intent(context, WaterReminderIntentService.class);
-        //      TODO (7) Set the action of the intent to designate you want to dismiss the notification
+        Intent ignoreReminderIntent = new Intent(context, WaterReminderIntentService.class);
+        //      TODO (7) Set the action of the intent to designate you want to dismiss the notification - Done
+        ignoreReminderIntent.setAction(ReminderTasks.ACTION_DISMISS_NOTIFICATION);
         //      TODO (8) Create a PendingIntent from the intent to launch WaterReminderIntentService
         //      TODO (9) Create an Action for the user to ignore the notification (and dismiss it)
         //      TODO (10) Return the action
