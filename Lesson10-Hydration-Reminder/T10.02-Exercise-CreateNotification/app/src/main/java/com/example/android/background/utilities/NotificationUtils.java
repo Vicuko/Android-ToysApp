@@ -1,11 +1,14 @@
 package com.example.android.background.utilities;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Build;
 
 import com.example.android.background.MainActivity;
 import com.example.android.background.R;
@@ -15,13 +18,29 @@ import com.example.android.background.R;
  */
 public class NotificationUtils {
 
-    public static final int WATER_REMINDER_PENDING_INTENT_ID = 1;
-    // TODO (7) Create a method called remindUserBecauseCharging which takes a Context.
+    private static final int WATER_REMINDER_NOTIFICATION_ID = 1;
+    private static final int WATER_REMINDER_PENDING_INTENT_ID = 11;
+    private static final String WATER_REMINDER_NOTIFICATION_CHANNEL_ID = "reminder_notification_channel";
+
+    // TODO (7) Create a method called remindUserBecauseCharging which takes a Context. - Done
     // This method will create a notification for charging. It might be helpful
     // to take a look at this guide to see an example of what the code in this method will look like:
     // https://developer.android.com/training/notify-user/build-notification.html
-    // TODO (8) Get the NotificationManager using context.getSystemService
-    // TODO (9) Create a notification channel for Android O devices
+    private static void remindUserBecauseCharging(Context context) {
+        // TODO (8) Get the NotificationManager using context.getSystemService - Done
+        NotificationManager notificationManager = (NotificationManager)
+                context.getSystemService(Context.NOTIFICATION_SERVICE);
+        // TODO (9) Create a notification channel for Android O devices - Done
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel mChannel = new NotificationChannel(
+                    WATER_REMINDER_NOTIFICATION_CHANNEL_ID,
+                    context.getString(R.string.main_notification_channel_name),
+                    NotificationManager.IMPORTANCE_HIGH);
+            notificationManager.createNotificationChannel(mChannel);
+        );
+        }
+    }
+
     // TODO (10) In the remindUser method use NotificationCompat.Builder to create a notification
     // that:
     // - has a color of R.colorPrimary - use ContextCompat.getColor to get a compatible color
@@ -45,7 +64,7 @@ public class NotificationUtils {
     private static PendingIntent contentIntent(Context context) {
 
         // TODO (2) Create an intent that opens up the MainActivity - Done
-        Intent startActivityIntent = new Intent(context ,MainActivity.class);
+        Intent startActivityIntent = new Intent(context, MainActivity.class);
         // TODO (3) Create a PendingIntent using getActivity that: - Done
         // - Take the context passed in as a parameter
         // - Takes an unique integer ID for the pending intent (you can create a constant for
@@ -59,18 +78,22 @@ public class NotificationUtils {
                 WATER_REMINDER_PENDING_INTENT_ID,
                 startActivityIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
-    };
+    }
+
+    ;
 
 
     // TODO (4) Create a helper method called largeIcon which takes in a Context as a parameter and - Done
     // returns a Bitmap. This method is necessary to decode a bitmap needed for the notification.
-    private static Bitmap largeIcon(Context context){
+    private static Bitmap largeIcon(Context context) {
         // TODO (5) Get a Resources object from the context. - Done
         Resources resources = context.getResources();
         // TODO (6) Create and return a bitmap using BitmapFactory.decodeResource, passing in the - Done
         // resources object and R.drawable.ic_local_drink_black_24px
-        Bitmap bitmap = BitmapFactory.decodeResource(resources,R.drawable.ic_local_drink_black_24px);
+        Bitmap bitmap = BitmapFactory.decodeResource(resources, R.drawable.ic_local_drink_black_24px);
         return bitmap;
-    };
+    }
+
+    ;
 
 }
