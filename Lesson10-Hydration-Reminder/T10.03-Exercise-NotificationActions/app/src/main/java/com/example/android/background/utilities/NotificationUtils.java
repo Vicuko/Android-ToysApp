@@ -125,7 +125,10 @@ public class NotificationUtils {
                 ACTION_DRINK_PENDING_INTENT_ID,
                 incrementWaterIntent,
                 PendingIntent.FLAG_CANCEL_CURRENT);
-        //      TODO (15) Create an Action for the user to tell us they've had a glass of water
+        //      TODO (15) Create an Action for the user to tell us they've had a glass of water - Done
+        NotificationCompat.Action drinkWaterAction = new NotificationCompat.Action(R.drawable.ic_drink_notification,
+                "I did it",
+                incrementWaterPendingIntent);
         //      TODO (16) Return the action
     }
 
