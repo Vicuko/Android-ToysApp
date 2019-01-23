@@ -97,17 +97,18 @@ public class NotificationUtils {
         Intent ignoreReminderIntent = new Intent(context, WaterReminderIntentService.class);
         //      TODO (7) Set the action of the intent to designate you want to dismiss the notification - Done
         ignoreReminderIntent.setAction(ReminderTasks.ACTION_DISMISS_NOTIFICATION);
-        //      TODO (8) Create a PendingIntent from the intent to launch WaterReminderIntentService
+        //      TODO (8) Create a PendingIntent from the intent to launch WaterReminderIntentService - Done
         PendingIntent ignoreReminderPendingIntent = PendingIntent.getService(
                 context,
                 ACTION_IGNORE_PENDING_INTENT_ID,
                 ignoreReminderIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
-        //      TODO (9) Create an Action for the user to ignore the notification (and dismiss it)
+        //      TODO (9) Create an Action for the user to ignore the notification (and dismiss it) - Done
         NotificationCompat.Action ignoreReminderAction = new NotificationCompat.Action(R.drawable.ic_cancel_black_24px,
                 "No, thanks",
                 ignoreReminderPendingIntent);
-        //      TODO (10) Return the action
+        //      TODO (10) Return the action - Done
+        return ignoreReminderAction;
     }
 
 
