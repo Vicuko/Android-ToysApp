@@ -29,7 +29,7 @@ public class NotificationUtils {
     // This method will create a notification for charging. It might be helpful
     // to take a look at this guide to see an example of what the code in this method will look like:
     // https://developer.android.com/training/notify-user/build-notification.html
-    private static void remindUserBecauseCharging(Context context) {
+    public static void remindUserBecauseCharging(Context context) {
         // TODO (8) Get the NotificationManager using context.getSystemService - Done
         NotificationManager notificationManager = (NotificationManager)
                 context.getSystemService(Context.NOTIFICATION_SERVICE);
