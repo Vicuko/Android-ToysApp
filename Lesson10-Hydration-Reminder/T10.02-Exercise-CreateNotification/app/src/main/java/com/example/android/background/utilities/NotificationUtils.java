@@ -11,6 +11,7 @@ import com.example.android.background.MainActivity;
  */
 public class NotificationUtils {
 
+    public static final int WATER_REMINDER_PENDING_INTENT_ID = 1;
     // TODO (7) Create a method called remindUserBecauseCharging which takes a Context.
     // This method will create a notification for charging. It might be helpful
     // to take a look at this guide to see an example of what the code in this method will look like:
@@ -40,8 +41,8 @@ public class NotificationUtils {
     private static PendingIntent contentIntent(Context context) {
 
         // TODO (2) Create an intent that opens up the MainActivity - Done
-        Intent intent = new Intent(context ,MainActivity.class);
-        // TODO (3) Create a PendingIntent using getActivity that:
+        Intent startActivityIntent = new Intent(context ,MainActivity.class);
+        // TODO (3) Create a PendingIntent using getActivity that: - Done
         // - Take the context passed in as a parameter
         // - Takes an unique integer ID for the pending intent (you can create a constant for
         //   this integer above
@@ -49,6 +50,11 @@ public class NotificationUtils {
         //   when the notification is triggered
         // - Has the flag FLAG_UPDATE_CURRENT, so that if the intent is created again, keep the
         // intent but update the data
+        return PendingIntent.getActivity(
+                context,
+                WATER_REMINDER_PENDING_INTENT_ID,
+                startActivityIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
     };
 
 
