@@ -70,10 +70,12 @@ public class NotificationUtils {
                 && Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
             notificationBuilder.setPriority(NotificationCompat.PRIORITY_HIGH);
         }
-    }
-    // TODO (12) Trigger the notification by calling notify on the NotificationManager.
-    // Pass in a unique ID of your choosing for the notification and notificationBuilder.build()
+        // TODO (12) Trigger the notification by calling notify on the NotificationManager. - Done
+        // Pass in a unique ID of your choosing for the notification and notificationBuilder.build()
+        notificationManager.notify(WATER_REMINDER_NOTIFICATION_ID, notificationBuilder.build());
 
+
+    }
 
     // TODO (1) Create a helper method called contentIntent with a single parameter for a Context. It - Done
     // should return a PendingIntent. This method will create the pending intent which will trigger when
