@@ -23,7 +23,7 @@ import com.example.android.background.utilities.PreferenceUtilities;
 public class ReminderTasks {
 
     public static final String ACTION_INCREMENT_WATER_COUNT = "increment-water-count";
-    //  TODO (2) Add a public static constant called ACTION_DISMISS_NOTIFICATION
+    //  TODO (2) Add a public static constant called ACTION_DISMISS_NOTIFICATION - Done
     public static final String ACTION_DISMISS_NOTIFICATION = "dismiss-notification";
 
     public static void executeTask(Context context, String action) {
