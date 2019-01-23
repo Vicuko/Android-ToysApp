@@ -37,7 +37,6 @@ public class NotificationUtils {
                     context.getString(R.string.main_notification_channel_name),
                     NotificationManager.IMPORTANCE_HIGH);
             notificationManager.createNotificationChannel(mChannel);
-        );
         }
     }
 
