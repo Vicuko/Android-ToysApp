@@ -129,7 +129,8 @@ public class NotificationUtils {
         NotificationCompat.Action drinkWaterAction = new NotificationCompat.Action(R.drawable.ic_drink_notification,
                 "I did it",
                 incrementWaterPendingIntent);
-        //      TODO (16) Return the action
+        //      TODO (16) Return the action - Done
+        return drinkWaterAction;
     }
 
 
