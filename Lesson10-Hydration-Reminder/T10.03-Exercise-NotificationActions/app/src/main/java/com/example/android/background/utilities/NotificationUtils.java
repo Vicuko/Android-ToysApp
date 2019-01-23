@@ -49,6 +49,7 @@ public class NotificationUtils {
      */
     private static final int WATER_REMINDER_PENDING_INTENT_ID = 3417;
     private static final int ACTION_IGNORE_PENDING_INTENT_ID = 4371;
+    private static final int ACTION_DRINK_PENDING_INTENT_ID = 3741;
     /**
      * This notification channel id is used to link notifications to this channel
      */
@@ -118,7 +119,12 @@ public class NotificationUtils {
         Intent incrementWaterIntent = new Intent(context, WaterReminderIntentService.class);
         //      TODO (13) Set the action of the intent to designate you want to increment the water count - Done
         incrementWaterIntent.setAction(ReminderTasks.ACTION_INCREMENT_WATER_COUNT);
-        //      TODO (14) Create a PendingIntent from the intent to launch WaterReminderIntentService
+        //      TODO (14) Create a PendingIntent from the intent to launch WaterReminderIntentService - Done
+        PendingIntent incrementWaterPendingIntent = PendingIntent.getService(
+                context,
+                ACTION_DRINK_PENDING_INTENT_ID,
+                incrementWaterIntent,
+                PendingIntent.FLAG_CANCEL_CURRENT);
         //      TODO (15) Create an Action for the user to tell us they've had a glass of water
         //      TODO (16) Return the action
     }
