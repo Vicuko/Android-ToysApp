@@ -15,10 +15,11 @@
  */
 package com.example.android.background.sync;
 
-import android.app.job.JobParameters;
-import android.app.job.JobService;
 import android.content.Context;
 import android.os.AsyncTask;
+
+import com.firebase.jobdispatcher.JobParameters;
+import com.firebase.jobdispatcher.JobService;
 
 // TODO (3) WaterReminderFirebaseJobService should extend from JobService - Done
 public class WaterReminderFirebaseJobService extends JobService {
@@ -31,12 +32,12 @@ public class WaterReminderFirebaseJobService extends JobService {
         mBackgroundTask = new AsyncTask() {
             // TODO (6) Override doInBackground - Done
             @Override
-            protected Object doInBackground(Object[] objects) {
+            protected Object doInBackground(Object[] params) {
                 // TODO (7) Use ReminderTasks to execute the new charging reminder task you made, use - Done
                 // this service as the context (WaterReminderFirebaseJobService.this) and return null
                 // when finished.
                 Context context = WaterReminderFirebaseJobService.this;
-                ReminderTasks.executeTask(context,ReminderTasks.ACTION_CHARGING_REMINDER);
+                ReminderTasks.executeTask(context, ReminderTasks.ACTION_CHARGING_REMINDER);
                 return null;
             }
             // TODO (8) Override onPostExecute and called jobFinished. Pass the job parameters - Done
@@ -44,14 +45,14 @@ public class WaterReminderFirebaseJobService extends JobService {
             // and that you do not want to reschedule the job.
             @Override
             protected void onPostExecute(Object o) {
-                jobFinished(jobParameters,false);
+                jobFinished(jobParameters, false);
             }
         };
         // TODO (9) Execute the AsyncTask - Done
         mBackgroundTask.execute();
         // TODO (10) Return true - Done
         return true;
-    }
+    };
 
     // TODO (11) Override onStopJob - Done
     @Override
