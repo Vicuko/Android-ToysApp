@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements
 
     private Toast mToast;
     IntentFilter mChargingIntentFilter;
+    ChargingBroadcastReceiver mChargingReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         prefs.registerOnSharedPreferenceChangeListener(this);
 
-        // TODO (5) Create and instantiate a new instance variable for your ChargingBroadcastReceiver
+        // TODO (5) Create and instantiate a new instance variable for your ChargingBroadcastReceiver - Done
         // and an IntentFilter
         // TODO (6) Call the addAction method on your intent filter and add Intent.ACTION_POWER_CONNECTED - Done
         // and Intent.ACTION_POWER_DISCONNECTED. This sets up an intent filter which will trigger
@@ -70,13 +71,25 @@ public class MainActivity extends AppCompatActivity implements
         mChargingIntentFilter = new IntentFilter();
         mChargingIntentFilter.addAction(Intent.ACTION_POWER_CONNECTED);
         mChargingIntentFilter.addAction(Intent.ACTION_POWER_DISCONNECTED);
+
+        mChargingReceiver = new ChargingBroadcastReceiver();
     }
 
-    // TODO (7) Override onResume and setup your broadcast receiver. Do this by calling
+    // TODO (7) Override onResume and setup your broadcast receiver. Do this by calling - Done
     // registerReceiver with the ChargingBroadcastReceiver and IntentFilter.
 
-    // TODO (8) Override onPause and unregister your receiver using the unregisterReceiver method
-    
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+
+    // TODO (8) Override onPause and unregister your receiver using the unregisterReceiver method - Done
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
     /**
      * Updates the TextView to display the new water count from SharedPreferences
      */
