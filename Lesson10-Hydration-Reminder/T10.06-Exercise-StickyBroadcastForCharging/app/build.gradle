@@ -2,8 +2,9 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    buildToolsVersion '28.0.3'
     defaultConfig {
+        vectorDrawables.useSupportLibrary = true
         applicationId "com.example.android.background"
         minSdkVersion 14
         targetSdkVersion 26
@@ -18,7 +19,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:26.0.1'
-    compile 'com.firebase:firebase-jobdispatcher:0.5.2'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.0.1'
+    implementation 'com.firebase:firebase-jobdispatcher:0.5.2'
 }
