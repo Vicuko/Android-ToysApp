@@ -20,6 +20,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.os.BatteryManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -83,10 +85,15 @@ public class MainActivity extends AppCompatActivity implements
         // In Android M and beyond you can simply get a reference to the BatteryManager and call
         // isCharging.
 
-        // TODO (1) Check if you are on Android M or later, if so...
-            // TODO (2) Get a BatteryManager instance using getSystemService()
-            // TODO (3) Call isCharging on the battery manager and pass the result on to your show
+        // TODO (1) Check if you are on Android M or later, if so... - Done
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            // TODO (2) Get a BatteryManager instance using getSystemService() - Done
+            BatteryManager batteryManager = (BatteryManager) getSystemService(BATTERY_SERVICE);
+            // TODO (3) Call isCharging on the battery manager and pass the result on to your show - Done
             // charging method
+            boolean isCharging = batteryManager.isCharging();
+        }
+
 
         // TODO (4) If your user is not on M+, then...
             // TODO (5) Create a new intent filter with the action ACTION_BATTERY_CHANGED. This is a
