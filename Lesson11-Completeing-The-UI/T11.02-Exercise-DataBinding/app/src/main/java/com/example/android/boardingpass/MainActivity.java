@@ -29,7 +29,7 @@ import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
 
-    //TODO (3) Create a data binding instance called mBinding of type ActivityMainBinding
+    //TODO (3) Create a data binding instance called mBinding of type ActivityMainBinding - Done
     ActivityMainBinding mBinding;
 
     @Override
