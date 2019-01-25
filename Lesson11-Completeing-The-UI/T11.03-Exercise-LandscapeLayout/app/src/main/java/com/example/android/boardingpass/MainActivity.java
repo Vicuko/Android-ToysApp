@@ -74,10 +74,10 @@ public class MainActivity extends AppCompatActivity {
                 minutesLessHoursUntilBoarding);
 
         mBinding.textViewBoardingInCountdown.setText(hoursAndMinutesUntilBoarding);
-        // TODO (8) Use the boardingInfo attribute in mBinding below to get the appropiate text Views
-        mBinding.textViewTerminal.setText(info.departureTerminal);
-        mBinding.textViewGate.setText(info.departureGate);
-        mBinding.textViewSeat.setText(info.seatNumber);
+        // TODO (8) Use the boardingInfo attribute in mBinding below to get the appropiate text Views - Done
+        mBinding.boardingInfo.textViewTerminal.setText(info.departureTerminal);
+        mBinding.boardingInfo.textViewGate.setText(info.departureGate);
+        mBinding.boardingInfo.textViewSeat.setText(info.seatNumber);
     }
 }
 
