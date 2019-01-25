@@ -23,6 +23,9 @@ import android.support.v7.app.AppCompatActivity;
 import com.example.android.boardingpass.databinding.ActivityMainBinding;
 import com.example.android.boardingpass.utilities.FakeDataUtils;
 
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
 
     //TODO (3) Create a data binding instance called mBinding of type ActivityMainBinding
@@ -51,7 +54,16 @@ public class MainActivity extends AppCompatActivity {
         mBinding.textViewDestinationAirport.setText(info.destCode);
         mBinding.textViewFlightCode.setText(info.flightCode);
 
-        // TODO (7) Use a SimpleDateFormat formatter to set the formatted value in time text views
+        // TODO (7) Use a SimpleDateFormat formatter to set the formatted value in time text views - Done
+        SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a", Locale.getDefault());
+        String boardTime = formatter.format(info.boardingTime);
+        String departureTime = formatter.format(info.departureTime);
+        String arrivalTime = formatter.format(info.arrivalTime);
+
+        mBinding.textViewBoardingTime.setText(boardTime);
+        mBinding.textViewDepartureTime.setText(departureTime);
+        mBinding.textViewArrivalTime.setText(arrivalTime);
+
 
         // TODO (8) Use TimeUnit methods to format the total minutes until boarding
 
