@@ -7,7 +7,7 @@ android {
     defaultConfig {
         vectorDrawables.useSupportLibrary = true
         applicationId "com.example.android.boardingpass"
-        minSdkVersion 10
+        minSdkVersion 14
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -18,7 +18,10 @@ android {
             minifyEnabled false
         }
     }
-    // TODO (1) Enable Data Binding in your application
+    // TODO (1) Enable Data Binding in your application - Done
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {

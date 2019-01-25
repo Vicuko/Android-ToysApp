@@ -16,12 +16,14 @@ package com.example.android.boardingpass;
 * limitations under the License.
 */
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     //TODO (3) Create a data binding instance called mBinding of type ActivityMainBinding
+    ActivityMainBinding mBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
