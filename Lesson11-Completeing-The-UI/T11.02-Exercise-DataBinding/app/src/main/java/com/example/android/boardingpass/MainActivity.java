@@ -21,6 +21,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.android.boardingpass.databinding.ActivityMainBinding;
+import com.example.android.boardingpass.utilities.FakeDataUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
         // TODO (4) Set the Content View using DataBindingUtil to the activity_main layout - Done
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-
-        // TODO (5) Load a BoardingPassInfo object with fake data using FakeDataUtils
+        // TODO (5) Load a BoardingPassInfo object with fake data using FakeDataUtils - Done
+        BoardingPassInfo fakeBoardingInfo = FakeDataUtils.generateFakeBoardingPassInfo();
 
         // TODO (9) Call displayBoardingPassInfo and pass the fake BoardingInfo instance
 
