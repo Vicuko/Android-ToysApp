@@ -2,9 +2,10 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
+        vectorDrawables.useSupportLibrary = true
         applicationId "com.example.android.boardingpass"
         minSdkVersion 10
         targetSdkVersion 25
@@ -21,8 +22,8 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:25.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
     // TODO (1) Enable Data Binding in your application
 }
