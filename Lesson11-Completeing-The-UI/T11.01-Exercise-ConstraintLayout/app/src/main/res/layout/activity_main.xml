@@ -32,14 +32,71 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/colorPrimary"/>
 
-        <!-- TODO (5) Create an ImageView for the left rectangle -->
-        <!-- TODO (6) Set the background to the shape_rectangle_stroke drawable -->
+    <!-- TODO (5) Create an ImageView for the left rectangle - Done -->
+        <!-- TODO (6) Set the background to the shape_rectangle_stroke drawable - Done -->
+    <ImageView
+        android:id="@+id/leftRectangle"
+        android:layout_width="60dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passenger_name"
+        app:srcCompat="@drawable/shape_rectangle_stroke" />
 
-        <!-- TODO (7) Create an ImageView for the divider -->
+    <!-- TODO (8) Create an ImageView for the rightRectangle - Done -->
+    <ImageView
+        android:id="@+id/rightRectangle"
+        android:layout_width="60dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passenger_name"
+        app:srcCompat="@drawable/shape_rectangle_stroke" />
 
-        <!-- TODO (8) Create an ImageView for the rightRectangle -->
+    <!-- TODO (7) Create an ImageView for the divider - Done -->
+    <ImageView
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/rightRectangle"
+        app:layout_constraintEnd_toStartOf="@+id/rightRectangle"
+        app:layout_constraintStart_toEndOf="@+id/leftRectangle"
+        app:layout_constraintTop_toBottomOf="@+id/rightRectangle"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:background="@color/colorPrimaryLight"/>
 
-        <!-- TODO (9) Create a TextView for the origin code, the destination code and the flight code -->
+    <!-- TODO (9) Create a TextView for the origin code, the destination code and the flight code - Done -->
+    <TextView
+        android:id="@+id/origin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="SFO"
+        app:layout_constraintBottom_toBottomOf="@+id/divider"
+        app:layout_constraintEnd_toEndOf="@+id/leftRectangle"
+        app:layout_constraintStart_toStartOf="@+id/leftRectangle"
+        app:layout_constraintTop_toTopOf="@+id/divider"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
+
+    <TextView
+        android:id="@+id/destination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="LAX"
+        app:layout_constraintBottom_toBottomOf="@+id/divider"
+        app:layout_constraintEnd_toEndOf="@+id/rightRectangle"
+        app:layout_constraintStart_toStartOf="@+id/rightRectangle"
+        app:layout_constraintTop_toTopOf="@+id/divider"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
+
+
 
         <!-- TODO (15) Import the plane image SVG file into the drawable directory and name it art_plane -->
         <!-- TODO (16) Create an ImageView for the plane and set the background to art_plane drawable -->
