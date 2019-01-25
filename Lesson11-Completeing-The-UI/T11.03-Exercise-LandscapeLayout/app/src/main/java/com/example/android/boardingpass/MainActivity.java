@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         /*
          * DataBindUtil.setContentView replaces our normal call of setContent view.
          * DataBindingUtil also created our ActivityMainBinding that we will eventually use to
