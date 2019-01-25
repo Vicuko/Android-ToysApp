@@ -43,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
         // TODO (5) Load a BoardingPassInfo object with fake data using FakeDataUtils - Done
         BoardingPassInfo fakeBoardingInfo = FakeDataUtils.generateFakeBoardingPassInfo();
 
-        // TODO (9) Call displayBoardingPassInfo and pass the fake BoardingInfo instance
+        // TODO (9) Call displayBoardingPassInfo and pass the fake BoardingInfo instance - Done
+        displayBoardingPassInfo(fakeBoardingInfo);
 
     }
 
