@@ -1,36 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- TODO (17) Surround the Constraint layout with a ScrollView -->
-<!-- TODO (2) Replace the Relative layout with a ConstraintLayout -->
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<!-- TODO (2) Replace the Relative layout with a ConstraintLayout - Done -->
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- TODO (3) Create a TextView for the Passenger label and name -->
-    <!-- TODO (4) Use tool:text to set the text value -->
+        <!-- TODO (3) Create a TextView for the Passenger label and name - Done -->
+        <!-- TODO (4) Use tool:text to set the text value - Done -->
 
-    <!-- TODO (5) Create an ImageView for the left rectangle -->
-    <!-- TODO (6) Set the background to the shape_rectangle_stroke drawable -->
+    <TextView
+        android:id="@+id/passenger_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/passenger_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- TODO (7) Create an ImageView for the divider -->
+    <TextView
+        android:id="@+id/passenger_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        tools:text="Mr. James Bond"
+        app:layout_constraintStart_toStartOf="@+id/passenger_label"
+        app:layout_constraintTop_toBottomOf="@+id/passenger_label"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/colorPrimary"/>
 
-    <!-- TODO (8) Create an ImageView for the rightRectangle -->
+        <!-- TODO (5) Create an ImageView for the left rectangle -->
+        <!-- TODO (6) Set the background to the shape_rectangle_stroke drawable -->
 
-    <!-- TODO (9) Create a TextView for the origin code, the destination code and the flight code -->
+        <!-- TODO (7) Create an ImageView for the divider -->
 
-    <!-- TODO (15) Import the plane image SVG file into the drawable directory and name it art_plane -->
-    <!-- TODO (16) Create an ImageView for the plane and set the background to art_plane drawable -->
+        <!-- TODO (8) Create an ImageView for the rightRectangle -->
 
-    <!-- TODO (10) Create a TextView for the time texts and their corresponding labels -->
+        <!-- TODO (9) Create a TextView for the origin code, the destination code and the flight code -->
 
-    <!-- TODO (11) Create an ImageView for the blue table's header -->
+        <!-- TODO (15) Import the plane image SVG file into the drawable directory and name it art_plane -->
+        <!-- TODO (16) Create an ImageView for the plane and set the background to art_plane drawable -->
 
-    <!-- TODO (12) Create an ImageView for the blue table's body -->
+        <!-- TODO (10) Create a TextView for the time texts and their corresponding labels -->
 
-    <!-- TODO (13) Create a TextView for each of the labels and text fields in the blue table -->
+        <!-- TODO (11) Create an ImageView for the blue table's header -->
 
-    <!-- TODO (14) Create an ImageView for the barcode -->
+        <!-- TODO (12) Create an ImageView for the blue table's body -->
 
-</RelativeLayout>
+        <!-- TODO (13) Create a TextView for each of the labels and text fields in the blue table -->
 
+        <!-- TODO (14) Create an ImageView for the barcode -->
+
+
+</android.support.constraint.ConstraintLayout>
+</ScrollView>
