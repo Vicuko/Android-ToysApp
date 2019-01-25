@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    TODO (1) Create a new xml file called flight_info in the layout directory
+    TODO (1) Create a new xml file called flight_info in the layout directory - Done
     TODO (2) Create a new xml file called boarding_info in the layout directory
 
     TODO (9) Copy activity_main.xml into the layout-land folder to have 2 layout xml files for the same activity
