@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion '25.0.2'
     defaultConfig {
         applicationId "com.example.android.visualpolish"
         minSdkVersion 16
@@ -18,9 +17,9 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     // for RecyclerView
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'com.android.support:recyclerview-v7:25.1.0'
+    implementation 'com.android.support:appcompat-v7:25.1.0'
+    implementation 'com.android.support:recyclerview-v7:25.1.0'
 }
