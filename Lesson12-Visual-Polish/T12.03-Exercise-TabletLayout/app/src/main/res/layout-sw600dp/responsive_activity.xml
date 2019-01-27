@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Note that these first two to-do's are complete for this exercise, but included as general steps for creating alternative layout resources -->
 
-<!-- TODO (1) Create a new layout folder for devices with a smallest width = 600dp -->
+<!-- TODO (1) Create a new layout folder for devices with a smallest width = 600dp - Done -->
 <!-- This will let you create unique tablet layouts -->
 
-<!-- TODO (2) Copy over the responsive_layout xml from the base layout folder -->
 
-<!-- TODO (3) Using a horizontal linear layout, change this xml so that the ImageView appears to the left of all text -->
+<!-- TODO (2) Copy over the responsive_layout xml from the base layout folder - Done -->
+
+<!-- TODO (3) Using a horizontal linear layout, change this xml so that the ImageView appears to the left of all text - Done -->
 <!-- The image layout height should be = 200dp and weight = 1, add 8dp padding to the right -->
 
 <!-- Vertical linear layout for a sample article -->
@@ -19,21 +20,30 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     tools:context="com.example.android.visualpolish.ResponsiveLayoutActivity">
 
     <!-- The layout includes views for a placeholder image, article title, date, and body text -->
     <ImageView
-        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_width="0dp"
         android:layout_gravity="center_horizontal"
-        android:layout_height="0dp"
         android:layout_weight="1"
-        android:paddingBottom="8dp"
-        android:src="@drawable/ic_insert_image"
+        android:paddingRight="8dp"
+        android:contentDescription="@string/image_placeholder"
         android:gravity="center"
-        android:contentDescription="@string/image_placeholder" />
+        android:src="@drawable/ic_insert_image" />
 
-    <!-- TODO (4) Wrap the text in a vertical linear layout and add more padding (8dp) to the left and right of all text -->
+    <!-- TODO (4) Wrap the text in a vertical linear layout and add more padding (8dp) to the left and right of all text - Done -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:paddingRight="8dp"
+        android:paddingLeft="8dp"
+        >
+
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
@@ -62,5 +72,6 @@
         android:text="@string/sample_body_text"
         android:textColor="@android:color/black"
         android:textSize="20sp" />
+    </LinearLayout>
 
 </LinearLayout>
